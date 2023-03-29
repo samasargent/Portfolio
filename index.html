@@ -1,186 +1,398 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <!-- Head -->
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width">
-    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Samantha Sargent</title>
     <link rel="shortcut icon" type="image/png" href="images/coding_icon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/portfolio.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,400;0,700;0,900;1,400;1,700;1,900&display=swap"
-        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/210d143590.js" crossorigin="anonymous"></script>
+    <script src="JS/portfolio.js"></script>
 </head>
 
 <!-- Body -->
 
-<body class="Background">
+<body class="">
 
     <!-- Navbar -->
-    <div class="Navbar">
-        <a class="active" href="#Home">Home</a>
-        <a href="#Slideshow">Slideshow</a>
-        <a href="#About">About</a>
-        <a href="#GitHub">GitHub</a>
-        <a onclick="openForm()" ondblclick="closeForm()" class="contact">Contact</a>
-    </div>
-
-    <!-- Background video -->
-    <div id="Home">
-        <video autoplay muted loop id="Coding_Video">
-            <source src="images/video/coding.mp4" type="video/mp4">
-            <!-- Display message if video fails to run -->
-            Your browser does not support HTML5 video.
-        </video>
-    </div>
-
-    <!-- Video text -->
-    <div class="Video_Text">
-        <h1 class="white-text">Samantha&#8217;s Portfolio</h1>
-        <p class="center">
-            <strong><q>In some ways, programming is like painting. You start with a blank canvas and certain basic raw
-                    materials. <br>You use a combination of science, art, and craft to determine what to do with them.
-                </q>
-                <br> &#8211;Andrew Hunt</strong>
-            <br>
-            <br> My name is Samantha Sargent. Welcome to my portfolio website. On it, I will tell you about my
-            background and experience.
-            <br>
-            <br> Thank you for stopping by and enjoy!
-        </p>
-    </div>
-
-    <!-- Slideshow -->
-    <div id="Slideshow">
-        <div id="Slideshow_Background">
-            <div id="Slideshow_Container">
-
-                <!-- Slide 1 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/samSargent.jpg" alt="photo of Samantha Sargent">
-                    <div class="text">I'm available to assist you on your project!</div>
+    <nav class="navbar navbar-expand-lg fixed-top portfolio-navbar">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#hero">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#About">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#Portfolio">Portfolio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link contact" onclick="openForm()" ondblclick="closeForm()">Contact</a>
+                    </li>
+                </ul>
+                <div class="d-flex">
+                    <a href="https://www.linkedin.com/in/samantha-sargent/" target="_blank"><i
+                            class="fa fa-fw fa-brands fa-linkedin-in fa-2xl"></i></a>
+                    <a href="https://github.com/samasargent?tab=repositories" target="_blank"><i
+                            class="fa fa-fw fa-brands fa-github fa-2xl"></i></a>
                 </div>
-                <!-- End SLide 1 -->
+            </div>
+        </div>
+    </nav>
 
-                <!-- Slide 2 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/HTML_CSS_and_JavaScript.jpeg"
-                        alt="HTML, CSS, and JS logos">
-                    <div class="text">I am a full-stack software developer,<br> trained in:<br>HTML, CSS, JavaScript,
+    <!-- Jumbotron Video -->
+    <!-- <div id="Home" class="jumbotron jumbotron-fluid mb-0">
+        <video autoplay muted loop id="Coding_Video" poster="images/coding_video_still.png">
+            <source src="images/video/coding.mp4" type="video/mp4">
+            <source src="images/video/coding.webm" type="video/webm">
+        </video>
+
+        <div class="container text-white">
+
+            <h1 class="display-3 mt-5">Samantha&#8217;s Portfolio</h1>
+            <p class="lead">
+                <strong><q>In some ways, programming is like painting. You start with a blank canvas and certain basic
+                        raw materials. You use a combination of science, art, and craft to determine what to do with
+                        them.</q>
+                    <br> &#8211;Andrew Hunt</strong>
+                <hr class="my-4">
+            <p>My name is Samantha Sargent. Welcome to my portfolio website. On it, I will tell you about my
+                background and experience.
+
+                <br><br> Thank you for stopping by and enjoy!
+            </p>
+            </p>
+        </div>
+    </div> -->
+
+    <!-- Hero Section -->
+    <section id="hero" class="d-flex flex-column justify-content-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 text-white">
+                    <h1>Samantha&#8217;s Portfolio</h1>
+                    <p>
+                        <strong><q>In some ways, programming is like painting. You start with a blank canvas and certain
+                                basic raw materials. <br>You use a combination of science, art, and craft to determine
+                                what to do with them.
+                            </q>
+                            <br> &#8211;Andrew Hunt</strong>
+                    </p>
+                    <p>
+                        My name is Samantha Sargent. Welcome to my portfolio website.
+                        <br>On it, I will tell you about my background and experience.
+                    </p>
+                    <p>
+                        Thank you for stopping by and enjoy!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="About" class="d-flex flex-column justify-content-center">
+        <div class="text-white pt-5 pb-5">
+            <div class="container">
+                <div class="row gx-5">
+                    <h2 class="display-4">About Me</h2>
+                    <div class="col">
+                        <p>I am a software developer who loves to code! I also have experience in graphic design and
+                            enjoy
+                            using the skills together.</p>
+                        <p>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
+                                Academy</a>&#8217;s C# and .NET Framework Boot Camp, and trained and experienced in the
+                            following web and programming languages: </p>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>Javascript</li>
+                            <li>SQL</li>
+                            <li>C#</li>
+                            <li>.NET Framework</li>
+                        </ul>
+                        <p>I am a full-stack developer and would love to work with you on your project.
+                            <a onclick="openForm()" class="contact">Contact</a> me below!
+                        </p>
+                    </div>
+
+                    <!-- Carousel Section -->
+                    <div class="col-4">
+                        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="false">
+                            <div class="carousel-inner bg-image rounded-3">
+
+                                <div class="carousel-item active">
+                                    <img src="images/samSargent.jpg" class="d-block w-100"
+                                        alt="Photo of Samantha Sargent">
+                                    <div class="carousel-caption d-none d-md-block mask"
+                                        style="background-color: rgba(0, 0, 0, 0.3)">
+                                        <div class="text">
+                                            <p>I'm available to assist you on your project!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="images/HTML_CSS_and_JavaScript.jpeg" class="d-block w-100"
+                                        alt="HTML, CSS and JavaScript logos">
+                                    <div class="carousel-caption d-none d-md-block mask"
+                                        style="background-color: rgba(0, 0, 0, 0.5)">
+                                        <div class="text">
+                                            <p>I am a full-stack software developer, trained in:<br>HTML, CSS,
+                                                JavaScript,</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="images/C_Sharp_and_Dot_NET.png" class="d-block w-100" alt="C# logo">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <div class="text">
+                                            <p>C#, .NET Framework, ASP.NET, MVC,</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="images/SQL_and_Database.jpg" class="d-block w-100" alt="">
+                                    <div class="carousel-caption d-none d-md-block mask"
+                                        style="background-color: rgba(0, 0, 0, 0.3)">
+                                        <div class="text">
+                                            <p>back end development, databases and SQL.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-item">
+                                    <img src="images/text-bubble-square.png" class="d-block w-100" alt="Text bubble">
+                                    <div class="carousel-caption d-none d-md-block mask"
+                                        style="background-color: rgba(0, 0, 0, 0.3)">
+                                        <div class="text">
+                                            <p>Contact me now!</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <button class="carousel-control-prev" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+
+                            <button class="carousel-control-next" type="button"
+                                data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- Portfolio section -->
+    <section id="Portfolio" class="d-flex flex-column justify-content-center">
+        <div class="text-white pt-5 pb-5 mb-5">
+            <div class="container">
+                <h2 class="display-4 pt-5">Portfolio</h2>
+                <div class="container mt-5">
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/liveproject.png" class="card-img-top" alt="Cast Member Index Page">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Theatre Vertigo CMS Site</h5>
+                                    <p class="card-text">An interactive website built using ASP.NET MVC. I focused on
+                                        the cast member pages, which included setting up CRUD functionality.</p>
+                                    <a href="https://github.com/samasargent/JobPlacementDashboard" target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/stainedglass.png" class="card-img-top" alt="Stained Glass Site">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Stained Glass Site</h5>
+                                    <p class="card-text">An example homepage for a company who makes and sells stained
+                                        glass windows. I styled it using CSS and it contains a navbar, image containers
+                                        and a contact form.</p>
+                                    <a href="https://github.com/samasargent/HTML-and-CSS-Projects/tree/main/websiteProject"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/drivein.png" class="card-img-top" alt="Drive-in Theater Site">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Drive-in Site</h5>
+                                    <p class="card-text">A re-design of the site for a local drive-in movie theater.
+                                        It was styled using Bootstrap 4. It contains
+                                        many Bootstrap components, including a navbar, jumbotron and cards.</p>
+                                    <a href="https://github.com/samasargent/HTML-and-CSS-Projects/tree/main/bootstrap4_project"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/carinsurance.png" class="card-img-top" alt="Car Insurance Site">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Car Insurance Site</h5>
+                                    <p class="card-text">An MVC web application that mimics a car
+                                        insurance website. It takes user's input on policy information and calculates a
+                                        quote based on business logic.</p>
+                                    <a href="https://github.com/samasargent/CSharp-Projects/tree/main/CarInsurance"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/musicals.png" class="card-img-top" alt="Seattle Musicals Site">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Seattle Musicals Site</h5>
+                                    <p class="card-text">An example homepage for promoting musicals that will
+                                        be in Seattle. I styled it using CSS and it contains a navbar, a modal gallery
+                                        of
+                                        images and a pop-up contact form.</p>
+                                    <a href="https://github.com/samasargent/HTML-and-CSS-Projects/tree/main/One-Page_Website"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/todo.png" class="card-img-top" alt="To-Do App">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">To-Do List App</h5>
+                                    <p class="card-text">An application that lets the user keep track of tasks they need
+                                        to do. It retains the tasks input by the user until removed.</p>
+                                    <a href="https://github.com/samasargent/Javascript-Projects/tree/main/todo_app"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/tictactoe.png" class="card-img-top" alt="Tic Tac Toe Game">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Tic-Tac-Toe Game</h5>
+                                    <p class="card-text">The classic game of Tic-Tac-Toe made using JavaScript. The user
+                                        is playing against
+                                        the computer, who chooses its spots randomly. It includes sound effects for
+                                        placement and winning.</p>
+                                    <a href="https://github.com/samasargent/Javascript-Projects/tree/main/TicTacToe"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col p-2">
+                            <div class="card bg-dark portfolio-card">
+                                <img src="images/calc.png" class="card-img-top" alt="Calculator App">
+                                <div class="card-body text-white">
+                                    <h5 class="card-title">Calculator App</h5>
+                                    <p class="card-text">A basic 4 function calculator designed using JavaScript. Users
+                                        can add, subtract, multiply, and divide.</p>
+                                    <a href="https://github.com/samasargent/Javascript-Projects/tree/main/Calculator"
+                                        target="_blank">
+                                        <i class="fa fa-fw fa-brands fa-github fa-xl"></i></a>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
-                <!-- End SLide 2 -->
-
-                <!-- Slide 3 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/C_Sharp_and_Dot_NET.png" alt="C# logo">
-                    <div class="text">C#, .NET Framework, ASP.NET, MVC, </div>
-                </div>
-                <!-- End SLide 3 -->
-
-                <!-- Slide 4 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/SQL_and_Database.jpg" alt="SQL logo">
-                    <div class="text">back end development, databases and SQL.</div>
-                </div>
-                <!-- End SLide 4 -->
-
-                <!-- Slide 5 of 5 -->
-                <div class="mySlides fade">
-                    <img class="Slideshow_Images" src="images/text-bubble-square.png" alt="Message bubble">
-                    <div class="text"><a class="white-text contact" onclick="openForm()">Contact me now!</a></div>
-                </div>
-                <!-- End SLide 5 -->
-
-                <!-- Previous and next buttons -->
-                <a class="Previous" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="Next" onclick="plusSlides(1)">&#10095;</a>
-            </div>
-            <br> <!-- Adds a break between the images and the dots -->
-
-            <!-- Slideshow dots -->
-            <div style="text-align: center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
             </div>
         </div>
-    </div>
-
-    <!-- About section -->
-    <div class="Row" id="About">
-        <!-- Left column -->
-        <div class="Column_2">
-            <img src="images/laptop.jpg" alt="A laptop sitting on a table next to some plants">
-        </div>
-        <!-- Right column -->
-        <div class="Column_1">
-            <h1>About</h1>
-            <p>
-                I am a software developer who loves to code! I also have experience in graphic design and enjoy using
-                the skills together.
-                <br>
-                <br>I am a graduate of <a href="https://www.learncodinganywhere.com" target="_blank">The Tech
-                    Academy</a>&#8217;s C# and .NET Framework Boot Camp, and trained and experienced in the following
-                web and
-                programming languages: HTML, CSS, JavaScript, SQL, C# and more.
-                <br>
-                <br>I am a full-stack developer and would love to work with you on your project.
-                <a onclick="openForm()" class="contact">Contact</a> me below!
-            </p>
-        </div>
-    </div>
-
-    <!-- GitHub section -->
-    <div class="Row" id="GitHub">
-        <!-- Left column -->
-        <div class="Column_1">
-            <h1>GitHub</h1>
-            <p>You can view my coding projects on my GitHub profile here:
-                <br>
-            </p>
-            <p class="center"><a href="https://github.com/samasargent" target="_blank">Github</a>
-            </p>
-        </div>
-        <!-- Right column -->
-        <div class="Column_2">
-            <a href="https://github.com/samasargent" target="_blank"><img src="images/GitHub.png" alt="GitHub Logo"></a>
-        </div>
-    </div>
+    </section>
 
     <!-- Contact Form -->
     <div id="Contact">
-        <button onclick="openForm()" class="Pop_Up_Button">CONTACT</button>
+        <button onclick="openForm()" class="btn btn-lg Pop_Up_Button Pop_Up_Button_Colors">CONTACT</button>
         <div class="form-popup" id="myForm">
             <form action="https://formspree.io/f/moqbbgjl" method="POST" class="form-container">
                 <!-- Here we are utilizing a 3rd party service to submit the contact form data -->
-                <h1>Contact</h1>
-                <label for="name">Name</label>
-                <input type="text" id="name" placeholder="Enter your name here" name="name" required>
-                <label for="phone">Phone</label>
-                <input type="text" id="phone" placeholder="Enter your phone number here" name="phone">
-                <label for="email">Email</label>
-                <input type="text" id="email" placeholder="Enter your email here" name="email" required>
-                <label for="message">Message</label>
-                <input type="text" id="message" placeholder="Write your message here" name="message">
-
-                <button type="submit" class="btn">SUBMIT</button>
-                <button type="button" class="btn cancel" onclick="closeForm()">CLOSE</button>
+                <h2 class="mb-3">Contact</h2>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="Enter your name here" name="name"
+                        required>
+                </div>
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Phone</label>
+                    <input type="text" id="phone" class="form-control" placeholder="Enter your phone number here" name="phone">
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="text" id="email" class="form-control" placeholder="Enter your email here" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Message</label>
+                    <input type="text" id="message" class="form-control" placeholder="Write your message here" name="message">
+                </div>
+            <button type="submit" class="btn form-button Pop_Up_Button_Colors">SUBMIT</button>
+            <button type="button" class="btn form-button cancel" onclick="closeForm()">CLOSE</button>
             </form>
         </div>
     </div>
 
-    <!-- Footer section -->
-    <footer>
-        <p class="center">&copy; 2022 Samantha Sargent</p>
-        <br>
-    </footer>
-    <script src="JS/portfolio.js"></script>
+        <!-- Footer section -->
+        <section class="d-flex flex-column justify-content-center text-light" id="Footer">
+            <div class="text-white pt-5">
+                <footer>
+                    <p class="p-5 fs-6">&copy; 2023 Samantha Sargent<br>
+                        Hero photo by <a
+                            href="https://unsplash.com/@ikukevk?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                            target="_blank">Kevin
+                            Ku</a> on <a
+                            href="https://unsplash.com/photos/w7ZyuGYNpRQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText"
+                            target="_blank">Unsplash</a>
+                    </p>
+                    <br>
+                </footer>
+            </div>
+        </section>
+
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
+
 </body>
 
 </html>
